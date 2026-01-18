@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-slate-50">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-blue-600 tracking-tight"><i class="fa-solid fa-tooth mr-2"></i>BRIGHTSMILE</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
+                    <a href="aboutus.html" class="text-gray-700 hover:text-blue-600 font-medium transition">About Us</a>
+                    <a href="contactus.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact Us</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
+                    <a href="login.html" class="text-gray-700 hover:text-blue-600 font-medium transition border-l pl-8">Login</a>
+                    <a href="appoinment.html" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200"><i class="fa-solid fa-calendar-check mr-2"></i>Appointment</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 pt-2 pb-6 space-y-2 flex flex-col items-center justify-center text-center ">
+            <a href="index.html" class="block px-3 py-2 text-gray-700 font-medium">Home</a>
+            <a href="aboutus.html" class="block px-3 py-2 text-gray-700 font-medium">About Us</a>
+            <a href="contactus.html" class="block px-3 py-2 text-gray-700 font-medium">Contact Us</a>
+            <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
+            <a href="login.html" class="block px-3 py-2 text-blue-600 font-medium">Login</a>
+            <a href="appoinment.html" class="block px-3 py-4 bg-blue-600 text-white text-center rounded-lg font-bold">Book Appointment</a>
+        </div>
+    </nav>
+
+    <section class="hero-bg h-screen flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-3xl">
+            <h1 class="text-4xl mt-10 md:text-6xl font-extrabold mb-6 leading-tight">Your Journey to a Perfect Smile Starts Here</h1>
+            <p class="text-lg md:text-xl mb-10 text-gray-100">Experience world-class dental care with the latest technology and a gentle touch. We make dental visits something to look forward to.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="appoinment.html" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-full text-lg font-bold transition">Book a Consultation</a>
+                <a href="services.html" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 px-8 py-4 rounded-full text-lg font-bold transition">Meet Our Doctors</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern Clinic" class="rounded-3xl shadow-2xl">
+            </div>
+            <div>
+                <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-4">Why Choose Us</h2>
+                <h3 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900">Modern Dentistry with a Personal Touch</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">For over 15 years, BrightSmile has been at the forefront of dental innovation. We combine state-of-the-art 3D imaging with a patient-first philosophy to ensure your comfort and health.</p>
+                <ul class="space-y-4">
+                    <li class="flex items-center text-gray-700"><i class="fa-solid fa-check-circle text-green-500 mr-3"></i> Certified Dental Specialists</li>
+                    <li class="flex items-center text-gray-700"><i class="fa-solid fa-check-circle text-green-500 mr-3"></i> Pain-free Treatment Options</li>
+                    <li class="flex items-center text-gray-700"><i class="fa-solid fa-check-circle text-green-500 mr-3"></i> Emergency Care Available 24/7</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready for a brighter smile?</h2>
+            <p class="text-gray-400 mb-8">Call us today at <span class="text-white font-bold">+1 (555) 000-1234</span> or visit us in Downtown Medical Center.</p>
+            <button class="bg-white text-blue-900 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition">Get Directions</button>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t bg-white">
+        <div class="text-center text-gray-500 text-sm">
+            &copy; 2026 BrightSmile Dental Care. All rights reserved.
+        </div>
+    </footer>
+
+    <script type="module">
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

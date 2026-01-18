@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | BrightSmile Dental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 font-sans antialiased">
+
+     <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-blue-600 tracking-tight"><i class="fa-solid fa-tooth mr-2"></i>BRIGHTSMILE</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
+                    <a href="aboutus.html" class="text-gray-700 hover:text-blue-600 font-medium transition">About Us</a>
+                    <a href="contactus.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Contact Us</a>
+                    <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
+                    <a href="login.html" class="text-gray-700 hover:text-blue-600 font-medium transition border-l pl-8">Login</a>
+                    <a href="appoinment.html" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200"><i class="fa-solid fa-calendar-check mr-2"></i>Appointment</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 pt-2 pb-6 space-y-2 flex flex-col items-center justify-center text-center">
+            <a href="index.html" class="block px-3 py-2 text-gray-700 font-medium">Home</a>
+            <a href="aboutus.html" class="block px-3 py-2 text-gray-700 font-medium">About Us</a>
+            <a href="contactus.html" class="block px-3 py-2 text-gray-700 font-medium">Contact Us</a>
+            <a href="services.html" class="text-gray-700 hover:text-blue-600 font-medium transition">Services</a>
+            <a href="login.html" class="block px-3 py-2 text-blue-600 font-medium">Login</a>
+            <a href="appoinment.html" class="block px-3 py-4 bg-blue-600 text-white text-center rounded-lg font-bold">Book Appointment</a>
+        </div>
+    </nav>
+
+
+    <section class="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-slate-50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Comprehensive Dental Care</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">From routine checkups to advanced cosmetic surgery, we provide a full range of services to keep your smile healthy and bright.</p>
+        </div>
+    </section>
+
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-2xl mb-6">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">General Dentistry</h3>
+                <p class="text-gray-600 mb-6">Routine cleanings, fillings, and comprehensive exams to maintain your overall oral health.</p>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Professional Cleaning</li>
+                    <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Oral Cancer Screening</li>
+                </ul>
+                <a href="appointment.html" class="text-blue-600 font-bold hover:text-blue-700 inline-flex items-center">Book Now <i class="fa-solid fa-chevron-right ml-2 text-xs"></i></a>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-2xl mb-6">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Cosmetic Dentistry</h3>
+                <p class="text-gray-600 mb-6">Transform your smile with veneers, bonding, and professional whitening treatments.</p>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-purple-500 mr-2"></i> Teeth Whitening</li>
+                    <li><i class="fa-solid fa-check text-purple-500 mr-2"></i> Porcelain Veneers</li>
+                </ul>
+                <a href="appointment.html" class="text-purple-600 font-bold hover:text-purple-700 inline-flex items-center">Book Now <i class="fa-solid fa-chevron-right ml-2 text-xs"></i></a>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600 text-2xl mb-6">
+                    <i class="fa-solid fa-grip-lines-vertical"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Orthodontics</h3>
+                <p class="text-gray-600 mb-6">Straighten your teeth with modern solutions including Invisalign and traditional braces.</p>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-teal-500 mr-2"></i> Invisalign Clear Aligners</li>
+                    <li><i class="fa-solid fa-check text-teal-500 mr-2"></i> Metal & Ceramic Braces</li>
+                </ul>
+                <a href="appointment.html" class="text-teal-600 font-bold hover:text-teal-700 inline-flex items-center">Book Now <i class="fa-solid fa-chevron-right ml-2 text-xs"></i></a>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600 text-2xl mb-6">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Dental Implants</h3>
+                <p class="text-gray-600 mb-6">Permanent solutions for missing teeth that look, feel, and function like natural teeth.</p>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-orange-500 mr-2"></i> Single Tooth Implants</li>
+                    <li><i class="fa-solid fa-check text-orange-500 mr-2"></i> Full Mouth Restoration</li>
+                </ul>
+                <a href="appointment.html" class="text-orange-600 font-bold hover:text-orange-700 inline-flex items-center">Book Now <i class="fa-solid fa-chevron-right ml-2 text-xs"></i></a>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 text-2xl mb-6">
+                    <i class="fa-solid fa-child"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Pediatric Care</h3>
+                <p class="text-gray-600 mb-6">Specialized dental care for children in a fun, friendly, and fear-free environment.</p>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-pink-500 mr-2"></i> Sealants & Fluoride</li>
+                    <li><i class="fa-solid fa-check text-pink-500 mr-2"></i> Habit Counseling</li>
+                </ul>
+                <a href="appointment.html" class="text-pink-600 font-bold hover:text-pink-700 inline-flex items-center">Book Now <i class="fa-solid fa-chevron-right ml-2 text-xs"></i></a>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-14 h-14 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-6">
+                    <i class="fa-solid fa-truck-medical"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-slate-900">Emergency Care</h3>
+                <p class="text-gray-600 mb-6">Immediate care for toothaches, broken teeth, or other dental emergencies.</p>
+                <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                    <li><i class="fa-solid fa-check text-red-500 mr-2"></i> Same-day Appointments</li>
+                    <li><i class="fa-solid fa-check text-red-500 mr-2"></i> Pain Management</li>
+                </ul>
+                <a href="contact.html" class="text-red-600 font-bold hover:text-red-700 inline-flex items-center">Contact Us <i class="fa-solid fa-chevron-right ml-2 text-xs"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Common Questions</h2>
+            <div class="space-y-6">
+                <div class="border-b pb-4">
+                    <h4 class="font-bold text-lg mb-2">How often should I visit the dentist?</h4>
+                    <p class="text-gray-600">We recommend a professional cleaning and checkup every six months for most patients.</p>
+                </div>
+                <div class="border-b pb-4">
+                    <h4 class="font-bold text-lg mb-2">Do you accept insurance?</h4>
+                    <p class="text-gray-600">Yes, we work with most major insurance providers and offer flexible payment plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t bg-slate-50 text-center text-gray-500 text-sm">
+        &copy; 2026 BrightSmile Dental Care. All rights reserved.
+    </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrightSmile Admin | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .sidebar { position: fixed; bottom: 0; left: 0; width: 100%; height: 70px; flex-direction: row; z-index: 100; border-top: 1px solid #e2e8f0; }
+            .main-content { margin-left: 0 !important; margin-bottom: 80px; }
+            .sidebar-text { display: none; }
+            .sidebar-icon { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans">
+
+    <aside class="sidebar fixed left-0 top-0 h-full w-64 bg-slate-900 text-white flex flex-col p-4 transition-all duration-300">
+        <div class="hidden md:flex items-center mb-10 px-2">
+            <i class="fa-solid fa-tooth text-blue-400 text-2xl mr-3"></i>
+            <span class="text-xl font-bold tracking-tight">BrightSmile</span>
+        </div>
+
+        <nav class="flex md:flex-col justify-around md:justify-start w-full gap-2">
+            <a href="admin.html" class="flex items-center p-3 rounded-xl bg-blue-600 text-white transition">
+                <i class="fa-solid fa-chart-pie sidebar-icon md:mr-3"></i>
+                <span class="sidebar-text font-medium">Dashboard</span>
+            </a>
+            <a href="totalappointment.html" class="flex items-center p-3 rounded-xl hover:bg-slate-800 text-slate-400 transition">
+                <i class="fa-solid fa-calendar-check sidebar-icon md:mr-3"></i>
+                <span class="sidebar-text font-medium">Appointments</span>
+            </a>
+            <a href="message.html" class="flex items-center p-3 rounded-xl hover:bg-slate-800 text-slate-400 transition">
+                <i class="fa-solid fa-comment-dots sidebar-icon md:mr-3"></i>
+                <span class="sidebar-text font-medium">Messages</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content md:ml-64 p-4 md:p-8">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-slate-500 text-sm font-bold uppercase">Appointments</span>
+                    <i class="fa-solid fa-user-check text-blue-500"></i>
+                </div>
+                <h2 id="total-appt" class="text-3xl font-black text-slate-800">0</h2>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-slate-500 text-sm font-bold uppercase">Messages</span>
+                    <i class="fa-solid fa-envelope text-purple-500"></i>
+                </div>
+                <h2 id="total-msg" class="text-3xl font-black text-slate-800">0</h2>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-blue-100 text-sm font-bold uppercase">Revenue</span>
+                    <i class="fa-solid fa-dollar-sign text-blue-200"></i>
+                </div>
+                <h2 id="total-revenue" class="text-3xl font-black">$0</h2>
+            </div>
+        </div>
+
+        <div id="appointments" class="mb-10">
+            <h3 class="text-xl font-bold mb-4 text-slate-800 px-2">Scheduled Patients</h3>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200">
+                            <tr>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase">Service</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase">Doctor</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase">Message</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase">Status</th>
+                                <th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase">Date/Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appt-body" class="divide-y divide-slate-100">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+       <div id="message">
+        <h3 class="text-xl font-bold mb-4 text-slate-800 px-2">Messages Patients</h3>
+         <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-slate-200">
+                    <thead class="bg-slate-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Sender</th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Service</th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Message</th>
+                            <th class="px-6 py-3 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">Date/Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="msg-body" class="bg-white divide-y divide-slate-100">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+       </div>
+    </main>
+
+    <script type="module">
+        import { db, ref, get } from "./firebaseConfig.js";
+
+        // CONFIG: Set your consultation fee per appointment
+        const CONSULTATION_FEE = 50; 
+
+        async function initDashboard() {
+            try {
+                // 1. Fetch Appointments
+                const apptSnap = await get(ref(db, 'appointments'));
+                let apptCount = 0;
+                let apptHtml = '';
+
+                if (apptSnap.exists()) {
+                    const data = apptSnap.val();
+                    apptCount = Object.keys(data).length;
+                    Object.values(data).reverse().forEach(item => {
+                        apptHtml += `
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-4 font-bold text-slate-700">${item.Servic || 'Anonymous'}</td>
+                                <td class="px-6 py-4 text-blue-600 font-medium">${item.DoctorName || 'Dr. General'}</td>
+                                <td class="px-6 py-4 font-bold text-slate-700">${item.Message || 'Anonymous'}</td>
+                                <td class="px-6 py-4 font-bold text-slate-700">${item.status || 'Anonymous'}</td>
+                                <td class="px-6 py-4 text-sm text-slate-500">${item.appointmentDate} at ${item.appointmentTime}</td>
+                            </tr>`;
+                    });
+                }
+                document.getElementById('appt-body').innerHTML = apptHtml || '<tr><td colspan="3" class="p-6 text-center">No appointments</td></tr>';
+                document.getElementById('total-appt').innerText = apptCount;
+                document.getElementById('total-revenue').innerText = `$${apptCount * CONSULTATION_FEE}`;
+
+                // 2. Fetch Messages
+                const msgSnap = await get(ref(db, 'contacts'));
+                let msgCount = 0;
+                let msgHtml = '';
+
+                if (msgSnap.exists()) {
+                    const data = msgSnap.val();
+                    msgCount = Object.keys(data).length;
+                    Object.values(data).reverse().forEach(item => {
+                        msgHtml += `
+                        <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-4 font-bold text-slate-700">${item.Name || 'Anonymous'}</td>
+                                <td class="px-6 py-4 text-blue-600 font-medium">${item.Servic|| 'Dr. General'}</td>
+                                <td class="px-6 py-4 text-sm text-slate-500">${item.Message}</td>
+                                <td class="px-6 py-4 text-sm text-slate-500">${item.timestamp}</td>
+                        </tr>`;
+                        
+                   
+                           
+                    });
+                }
+                document.getElementById('msg-body').innerHTML = msgHtml || '<p class="px-2 text-slate-400">No messages</p>';
+                document.getElementById('total-msg').innerText = msgCount;
+
+            } catch (err) {
+                console.error("Admin Load Error:", err);
+            }
+        }
+
+        initDashboard();
+    </script>
+</body>
+</html>

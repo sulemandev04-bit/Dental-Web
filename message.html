@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .sidebar { position: fixed; bottom: 0; left: 0; width: 100%; height: 70px; flex-direction: row; z-index: 100; border-top: 1px solid #e2e8f0; }
+            .main-content { margin-left: 0 !important; margin-bottom: 80px; }
+            .sidebar-text { display: none; }
+            .sidebar-icon { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans">
+
+     <aside class="sidebar fixed left-0 top-0 h-full w-64 bg-slate-900 text-white flex flex-col p-4 transition-all duration-300">
+        <div class="hidden md:flex items-center mb-10 px-2">
+            <i class="fa-solid fa-tooth text-blue-400 text-2xl mr-3"></i>
+            <span class="text-xl font-bold tracking-tight">BrightSmile</span>
+        </div>
+
+        <nav class="flex md:flex-col justify-around md:justify-start w-full gap-2">
+            <a href="admin.html" class="flex items-center p-3 rounded-xl bg-blue-600 text-white transition">
+                <i class="fa-solid fa-chart-pie sidebar-icon md:mr-3"></i>
+                <span class="sidebar-text font-medium">Dashboard</span>
+            </a>
+            <a href="totalappointment.html" class="flex items-center p-3 rounded-xl hover:bg-slate-800 text-slate-400 transition">
+                <i class="fa-solid fa-calendar-check sidebar-icon md:mr-3"></i>
+                <span class="sidebar-text font-medium">Appointments</span>
+            </a>
+            <a href="message.html" class="flex items-center p-3 rounded-xl hover:bg-slate-800 text-slate-400 transition">
+                <i class="fa-solid fa-comment-dots sidebar-icon md:mr-3"></i>
+                <span class="sidebar-text font-medium">Messages</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content md:ml-64 p-4 md:p-8">
+          <div id="message">
+        <h3 class="text-xl font-bold mb-4 text-blue-500 px-2 mt-5 ">MESSAGES PATIENTS</h3>
+         <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-slate-200">
+                    <thead class="bg-slate-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Sender</th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Service</th>
+                            <th class="px-6 py-3 text-left text-xs font-bold text-slate-500 uppercase tracking-wider">Message</th>
+                            <th class="px-6 py-3 text-right text-xs font-bold text-slate-500 uppercase tracking-wider">Date/Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="msg-body" class="bg-white divide-y divide-slate-100">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+       </div>
+    </main>
+
+       <script type="module">
+        import { db, ref, get } from "./firebaseConfig.js";
+
+    
+
+        async function initDashboard() {
+            try {
+            
+                // 2. Fetch Messages
+                const msgSnap = await get(ref(db, 'contacts'));
+                let msgHtml = '';
+
+                if (msgSnap.exists()) {
+                    const data = msgSnap.val();
+                    Object.values(data).reverse().forEach(item => {
+                        msgHtml += `
+                        <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-4 font-bold text-slate-700">${item.Name || 'Anonymous'}</td>
+                                <td class="px-6 py-4 text-blue-600 font-medium">${item.Servic|| 'Dr. General'}</td>
+                                <td class="px-6 py-4 text-sm text-slate-500">${item.Message}</td>
+                                <td class="px-6 py-4 text-sm text-slate-500">${item.timestamp}</td>
+                        </tr>`;
+                        
+                   
+                           
+                    });
+                }
+                document.getElementById('msg-body').innerHTML = msgHtml || '<p class="px-2 text-slate-400">No messages</p>';
+
+            } catch (err) {
+                console.error("Admin Load Error:", err);
+            }
+        }
+
+        initDashboard();
+    </script>
+</body>
+</html>
